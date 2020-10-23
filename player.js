@@ -116,12 +116,11 @@ class Player {
     }
 
     let ctx = document.querySelector("canvas").getContext("2d");
-    ctx.clearRect(0, 0, 480, 200); // added in
+
     ctx.fillStyle = this.color;
     ctx.fillRect(this.x, this.y, this.width, this.height);
 
     // how we clear previous drawings?
-    requestAnimationFrame(() => this.update());
 
     //console.log(keys);
   }
