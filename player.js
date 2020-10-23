@@ -128,11 +128,11 @@ class Obstacle extends Player {
     //if at far left, move far right
     console.log("in move obs");
     if (this.x - this.width / 4 <= 0) {
-      this.velX = 4;
+      this.velX = 6;
       console.log("left");
     }
     if (this.x + this.width >= 480) {
-      this.velX = -4;
+      this.velX = -6;
       console.log("right");
     }
     //if far right, move far left
