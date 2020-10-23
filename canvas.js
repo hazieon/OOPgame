@@ -1,22 +1,21 @@
-
 class GameArea {
-constructor(){
-this.canvas = document.querySelector("canvas");
+  constructor() {
+    this.canvas = document.querySelector("canvas");
+  }
+  start() {
+    this.canvas.width = 480;
+    this.canvas.height = 270;
+    this.context = this.canvas.getContext("2d");
 
-
+    this.context.fillStyle = "black";
+    this.context.fillRect(0, 200, 480, 70);
+    console.log("hi");
+  }
 }
-start() {
-this.canvas.width = 480;
-this.canvas.height = 270;
-this.context = this.canvas.getContext("2d");
-}
-}
-
 
 //Add state isSet.
 // Add method draw.
 //
-
 
 //setting canvas to be relative to window size
 // let heightRatio = 1.5;
