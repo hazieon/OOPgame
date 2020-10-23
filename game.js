@@ -29,9 +29,9 @@ class Game {
   }
 }
 
-let myPlayer = new Player(30, 30, "green", 200, 120, 3, 0, 0, 0.93, 0.2); //////////added friction and gravity values
+let myPlayer = new Player(30, 30, "purple", 200, 120, 3, 0, 0, 0.93, 0.2); //////////added friction and gravity values
 let myGameArea = new GameArea();
-let myCoin = new Coin(10, 10, "gold", 100, 60);
+let myCoin = new Coin(100, 75, 5, 0, 2 * Math.PI,"yellow");
 
 let myGame = new Game(myPlayer, myGameArea, myCoin);
 

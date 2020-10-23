@@ -2,25 +2,43 @@
 // Add methods start() and changeScore(), move player?, define canvas,
 
 class Coin {
-  constructor(width, height, color, x, y) {
-    this.width = width;
-    this.height = height;
-    this.color = color;
+  constructor(x, y, radius, startAngle, endAngle, color) {
+    //this.width = width;
+   // this.height = height;
     this.x = x;
     this.y = y;
+    this.radius = radius;
+    this.startAngle = startAngle;
+    this.endAngle = endAngle;
+    this.color = color;
   }
 
   makeCoin() {
     let ctx = document.querySelector("canvas").getContext("2d"); // comment out later?
+    
+    //ctx.fillRect(this.x, this.y, this.width, this.height);
+   
+    ctx.beginPath();
     ctx.fillStyle = this.color;
-    ctx.fillRect(this.x, this.y, this.width, this.height);
+    ctx.arc(this.x, this.y, this.radius, this.startAngle, this.endAngle);
+    ctx.fill();
+    ctx.stroke(); 
+
+
     console.log("Coin created");
   }
 
   updateCoin() {
     let ctx = document.querySelector("canvas").getContext("2d");
     //ctx.clearRect(0, 0, 480, 200); // added in
+   
+    //ctx.fillRect(this.x, this.y, this.width, this.height);
+    
+    ctx.beginPath();
     ctx.fillStyle = this.color;
-    ctx.fillRect(this.x, this.y, this.width, this.height);
+    ctx.arc(this.x, this.y, this.radius, this.startAngle, this.endAngle);
+    ctx.fill();
+    ctx.stroke(); 
+
   }
 }
