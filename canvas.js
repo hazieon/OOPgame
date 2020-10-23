@@ -14,13 +14,13 @@ class GameArea {
 
   updateScore(score) {
     let ctx = this.context;
-    ctx.font = "30px Arial";
+    ctx.font = "30px Consolas";
     ctx.fillText(score, 10, 50);
   }
 
   endGameMessage() {
     let ctx = this.context;
-    ctx.font = "40px Arial";
-    ctx.fillText("Game Over!", 120, 130);
+    ctx.font = "50px Consolas";
+    ctx.strokeText("Game Over!", 120, 130);
   }
 }
