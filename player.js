@@ -143,3 +143,53 @@ class Player {
 // //Player
 // ctx.fillStyle = "white";
 // ctx.fillRect(700, canvas.height/1.75, 150, 100);
+
+class Obstacle extends Player {
+  constructor(
+    width,
+    height,
+    color,
+    x,
+    y,
+    speed,
+    velX,
+    velY,
+    friction,
+    gravity
+  ) {
+    super(width, height, color, x, y, speed, velX, velY, friction, gravity);
+  }
+  moveObstacle() {
+    //if at far left, move far right
+    console.log("in move obs");
+    if (this.x - this.width / 4 <= 0) {
+      this.velX = 2;
+      console.log("left");
+    }
+    if (this.x + this.width >= 480) {
+      this.velX = -2;
+      console.log("right");
+    }
+    //if far right, move far left
+  }
+  updateObstacle() {
+    // makes boundaries
+    // if (this.x >= 480 - this.width) {
+    //   this.x = 480 - this.width;
+    // } else if (this.x <= 0) {
+    //   this.x = 0;
+    // }
+
+    //moves player side to side
+    this.x += this.velX;
+
+    let ctx = document.querySelector("canvas").getContext("2d");
+
+    ctx.fillStyle = this.color;
+    ctx.fillRect(this.x, this.y, this.width, this.height);
+
+    // how we clear previous drawings?
+
+    //console.log(keys);
+  }
+}

@@ -1,34 +1,34 @@
-(function () {
-  var requestAnimationFrame =
-    window.requestAnimationFrame ||
-    window.mozRequestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    window.msRequestAnimationFrame;
-  window.requestAnimationFrame = requestAnimationFrame;
-})();
+// (function () {
+//   var requestAnimationFrame =
+//     window.requestAnimationFrame ||
+//     window.mozRequestAnimationFrame ||
+//     window.webkitRequestAnimationFrame ||
+//     window.msRequestAnimationFrame;
+//   window.requestAnimationFrame = requestAnimationFrame;
+// })();
 
-let myGameArea = new GameArea();
-let myPlayer = new Player(30, 30, "green", 200, 120, 3, 0, 0, 0.93, 0.2); //////////added friction and gravity values
-/////////////////////////////
-//let myCoin = new Player(15, 15, "blue", 100, 60, 0, 0, 0, 0, false);
+// let myGameArea = new GameArea();
+// let myPlayer = new Player(30, 30, "green", 200, 120, 3, 0, 0, 0.93, 0.2); //////////added friction and gravity values
+// /////////////////////////////
+// //let myCoin = new Player(15, 15, "blue", 100, 60, 0, 0, 0, 0, false);
 
-myGameArea.start();
-myPlayer.makePlayer();
-///////////////////////////
-//myCoin.makePlayer();
+// myGameArea.start();
+// myPlayer.makePlayer();
+// ///////////////////////////
+// //myCoin.makePlayer();
 
-//let canvas = document.querySelector("canvas")
+// //let canvas = document.querySelector("canvas")
 
-function playerKeyMovements(event) {
-  console.log("hello");
-}
+// function playerKeyMovements(event) {
+//   console.log("hello");
+// }
 
-// runs update when we load our page
+// // runs update when we load our page
 
-window.addEventListener("load", function () {
-  myPlayer.update();
-  //myCoin.itemUpdate();
-});
+// window.addEventListener("load", function () {
+//   myPlayer.update();
+// //   //myCoin.itemUpdate();
+// });
 
 // function playerKeyMovements(event) {
 //     console.log("hello")

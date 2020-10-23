@@ -11,6 +11,12 @@ class GameArea {
     this.context.fillRect(0, 200, 480, 70);
     console.log("hi");
   }
+
+  updateScore(score) {
+    let ctx = this.context;
+    ctx.font = "30px Arial";
+    ctx.fillText(score, 10, 50);
+  }
 }
 
 //Add state isSet.
