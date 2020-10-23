@@ -8,7 +8,7 @@
 
 
 let myGameArea = new GameArea();
-let myPlayer = new Player(30, 30, "green", 200, 120, 3, 0, 0);
+let myPlayer = new Player(30, 30, "green", 200, 120, 3, 0, 0, 0.93, 0.4); //////////added friction and gravity values
 
 
 myGameArea.start();

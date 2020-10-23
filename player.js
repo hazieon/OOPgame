@@ -15,7 +15,7 @@ document.body.addEventListener("keyup", function(event) {
 });
 
 class Player{
-constructor(width, height, color, x, y, speed, velX, velY) {
+constructor(width, height, color, x, y, speed, velX, velY, friction, gravity) {
     this.width = width;
     this.height = height;
     this.color = color;
@@ -24,6 +24,10 @@ constructor(width, height, color, x, y, speed, velX, velY) {
     this.speed = speed;
     this.velX = velX;
     this.velY = velY;
+  /////jump and friction and gravity
+    this.jump = false;
+    this.friction = friction; 
+    this.gravity = gravity; 
   }
   makePlayer() {
     let ctx = document.querySelector("canvas").getContext("2d"); // comment out later?
@@ -31,20 +35,31 @@ constructor(width, height, color, x, y, speed, velX, velY) {
     ctx.fillRect(this.x, this.y, this.width, this.height);
   }
   // increases or decreses Velocity of player
-  update(){
-    if (keys[38]) {
-        // up arrow
-    }
+  update(){ // up arrow
+
+    if (keys.ArrowUp) {//38if(this.jump=false){ }
+      console.log("arrow up")
+        this.jump = true;
+        this.velY = -this.speed * 2;
+      console.log(keys)}
+      
     // right arrow
-    if (keys.ArrowRight) {if (this.velX < this.speed) {this.velX++;}}
+    if (keys.ArrowRight) {if (this.velX < this.speed) {this.velX++;
+    console.log("right")}}
 
     // left arrow
-    if (keys.ArrowLeft) {if (this.velX > -this.speed) {this.velX--;}}
+    if (keys.ArrowLeft) {if (this.velX > -this.speed) {this.velX--;
+      console.log("left")}}
+
+
+    this.velX *= this.friction;
+    //this.velY += this.gravity;
 
     //moves player side to side
     this.x += this.velX; 
     //moves player up and down?
     this.y += this.velY;
+
 
     let ctx = document.querySelector("canvas").getContext("2d")
         ctx.clearRect(0, 0, 480, 270); // added in
@@ -54,9 +69,7 @@ constructor(width, height, color, x, y, speed, velX, velY) {
     // how we clear previous drawings?
     requestAnimationFrame(() => this.update());
 
-     
-
-    console.log(keys)
+         console.log(keys)
 
   }
 }
