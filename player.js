@@ -47,15 +47,6 @@ class Player {
     console.log("Player created");
   }
 
-  // itemUpdate() {
-  //   let ctx = document.querySelector("canvas").getContext("2d");
-  //   ctx.clearRect(this.x, this.y, this.width, this.height);
-  //   ctx.fillStyle = this.color;
-  //   ctx.fillRect(this.x, this.y, this.width, this.height);
-
-  //   requestAnimationFrame(() => this.update());
-  // }
-
   update() {
     // up arrow
 
@@ -93,16 +84,6 @@ class Player {
     //moves player up and down?
     this.y += this.velY;
 
-    // if (player.x >= width - player.width) {
-    //   player.x = width - player.width;
-    // } else if (player.x <= 0) {
-    //   player.x = 0;
-    // }
-    // if (player.y >= height - player.height) {
-    //   player.y = height - player.height;
-    //   player.jumping = false;
-    // }
-
     // makes boundaries
     if (this.x >= 480 - this.width) {
       this.x = 480 - this.width;
@@ -126,23 +107,7 @@ class Player {
   }
 }
 
-//   movePlayerRight() {
-//       this.x+= 10;
-//       let ctx = document.querySelector("canvas").getContext("2d"); // comment out later?
-//         ctx.fillStyle = this.color;
-//         ctx.fillRect(this.x, this.y, this.width, this.height);
-//   }
-//   movePlayerLeft() {
-//     this.x-= 10;
-//     let ctx = document.querySelector("canvas").getContext("2d"); // comment out later?
-//       ctx.fillStyle = this.color;
-//       ctx.fillRect(this.x, this.y, this.width, this.height);
-// }
-// }
-
-// //Player
-// ctx.fillStyle = "white";
-// ctx.fillRect(700, canvas.height/1.75, 150, 100);
+// OBSTACLE EXTENSION
 
 class Obstacle extends Player {
   constructor(
@@ -163,23 +128,16 @@ class Obstacle extends Player {
     //if at far left, move far right
     console.log("in move obs");
     if (this.x - this.width / 4 <= 0) {
-      this.velX = 2;
+      this.velX = 4;
       console.log("left");
     }
     if (this.x + this.width >= 480) {
-      this.velX = -2;
+      this.velX = -4;
       console.log("right");
     }
     //if far right, move far left
   }
   updateObstacle() {
-    // makes boundaries
-    // if (this.x >= 480 - this.width) {
-    //   this.x = 480 - this.width;
-    // } else if (this.x <= 0) {
-    //   this.x = 0;
-    // }
-
     //moves player side to side
     this.x += this.velX;
 
@@ -187,9 +145,5 @@ class Obstacle extends Player {
 
     ctx.fillStyle = this.color;
     ctx.fillRect(this.x, this.y, this.width, this.height);
-
-    // how we clear previous drawings?
-
-    //console.log(keys);
   }
 }

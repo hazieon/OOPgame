@@ -37,6 +37,17 @@ class Game {
       this.score++;
       console.log(this.score);
     }
+    if (
+      this.player.x < this.obstacle.x + this.obstacle.width &&
+      this.player.x + this.player.width > this.obstacle.x &&
+      this.player.y < this.obstacle.y + this.obstacle.width &&
+      this.player.y + this.player.height > this.obstacle.y
+    ) {
+      // collision detected!
+      console.log("Game ->  // collision detected!");
+      this.endGame();
+      console.log("dead");
+    }
   }
 
   updateGame() {
@@ -52,49 +63,22 @@ class Game {
   }
 
   endGame() {
-    this.player.x = 200;
-    this.player.y = 120;
+    this.player.color = "white";
     this.score = 0;
+    // h1 = document.querySelector("h1")
+    // h1.innerText = "Game Over! Refresh to Restart"
+    this.gameArea.endGameMessage();
+    cancelAnimationFrame();
   }
 }
 
 let myPlayer = new Player(30, 30, "purple", 200, 120, 3, 0, 0, 0.93, 0.1); //////////added friction and gravity values
 let myGameArea = new GameArea();
 let myCoin = new Coin(100, 75, 5, 0, 2 * Math.PI, "orange");
-let myObstacle = new Obstacle(30, 30, "red", 0, 90, 3, 1, 0, 1, 0);
+let myObstacle = new Obstacle(30, 30, "red", 0, 90, 3, 0, 0, 1, 0);
 
 let myGame = new Game(myPlayer, myGameArea, myCoin, myObstacle);
 
 myGame.startGame();
 myGame.updateGame();
 /////////////////////////////
-//let myCoin = new Player(15, 15, "blue", 100, 60, 0, 0, 0, 0, false);
-
-// myGameArea.start();
-// myPlayer.makePlayer();
-///////////////////////////
-//myCoin.makePlayer();
-
-// runs update when we load our page
-
-// window.addEventListener("load", function () {
-//   myPlayer.update();
-//   //myCoin.itemUpdate();
-// });
-
-// function playerKeyMovements(event) {
-//     console.log("hello")
-//     //myPlayer.movePlayerRight()
-//     if(event.keyCode === 39) {
-//        return myPlayer.movePlayerRight()
-//     }
-//     if(event.keyCode === 37) {
-//         return myPlayer.movePlayerLeft()
-//     }
-// }
-
-// document.addEventListener("keydown", playerKeyMovements
-// )
-
-// myGameArea.canvas.addEventListener("click", playerKeyMovements
-// )
