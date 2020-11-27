@@ -6,11 +6,11 @@
 // checks code of keyevent and adds false or true to keys array
 let keys = [];
 
-document.body.addEventListener("keydown", function (event) {
+document.body.addEventListener('keydown', function (event) {
   keys[event.code] = true;
 });
 
-document.body.addEventListener("keyup", function (event) {
+document.body.addEventListener('keyup', function (event) {
   keys[event.code] = false;
 });
 
@@ -41,10 +41,9 @@ class Player {
     this.gravity = gravity;
   }
   makePlayer() {
-    let ctx = document.querySelector("canvas").getContext("2d"); // comment out later?
+    let ctx = document.querySelector('canvas').getContext('2d'); // comment out later?
     ctx.fillStyle = this.color;
     ctx.fillRect(this.x, this.y, this.width, this.height);
-    console.log("Player created");
   }
 
   update() {
@@ -52,11 +51,10 @@ class Player {
 
     if (keys.ArrowUp) {
       //38if(this.jump=false){ }
-      console.log("arrow up");
+
       if (!this.jump) {
         this.jump = true;
         this.velY = -this.speed * 2;
-        console.log(keys);
       }
     }
 
@@ -64,7 +62,6 @@ class Player {
     if (keys.ArrowRight) {
       if (this.velX < this.speed) {
         this.velX++;
-        console.log("right");
       }
     }
 
@@ -72,7 +69,6 @@ class Player {
     if (keys.ArrowLeft) {
       if (this.velX > -this.speed) {
         this.velX--;
-        console.log("left");
       }
     }
 
@@ -96,7 +92,7 @@ class Player {
       this.jump = false;
     }
 
-    let ctx = document.querySelector("canvas").getContext("2d");
+    let ctx = document.querySelector('canvas').getContext('2d');
 
     ctx.fillStyle = this.color;
     ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -126,14 +122,11 @@ class Obstacle extends Player {
   }
   moveObstacle() {
     //if at far left, move far right
-    console.log("in move obs");
     if (this.x - this.width / 4 <= 0) {
       this.velX = 6;
-      console.log("left");
     }
     if (this.x + this.width >= 480) {
       this.velX = -6;
-      console.log("right");
     }
     //if far right, move far left
   }
@@ -141,7 +134,7 @@ class Obstacle extends Player {
     //moves player side to side
     this.x += this.velX;
 
-    let ctx = document.querySelector("canvas").getContext("2d");
+    let ctx = document.querySelector('canvas').getContext('2d');
 
     ctx.fillStyle = this.color;
     ctx.fillRect(this.x, this.y, this.width, this.height);

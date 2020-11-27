@@ -14,7 +14,7 @@ class Coin {
   }
 
   makeCoin() {
-    let ctx = document.querySelector("canvas").getContext("2d"); // comment out later?
+    let ctx = document.querySelector('canvas').getContext('2d'); // comment out later?
 
     //ctx.fillRect(this.x, this.y, this.width, this.height);
 
@@ -24,8 +24,6 @@ class Coin {
     ctx.arc(this.x, this.y, this.radius, this.startAngle, this.endAngle);
     ctx.fill();
     ctx.stroke();
-
-    console.log("Coin created");
   }
 
   moveCoin() {
@@ -34,7 +32,7 @@ class Coin {
   }
 
   updateCoin() {
-    let ctx = document.querySelector("canvas").getContext("2d");
+    let ctx = document.querySelector('canvas').getContext('2d');
     //ctx.clearRect(0, 0, 480, 200); // added in
 
     //ctx.fillRect(this.x, this.y, this.width, this.height);
