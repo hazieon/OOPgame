@@ -69,6 +69,7 @@ class Game {
     // h1.innerText = "Game Over! Refresh to Restart"
     this.gameArea.endGameMessage();
     cancelAnimationFrame();
+    console.log(score);
   }
 }
 
