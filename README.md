@@ -1,6 +1,6 @@
 # Game Hackathon
 
-We had two days to plan and build a game in JavaScript using Object Oriented Programming.
+We had two days to plan and build a game in JavaScript using Object Oriented Programming architecture.
 In a pair, we completed this project in week 5 of the School of Code bootcamp to practice hands on with JavaScript, OOP, classes and canvas.
 We really pushed ourselves and set a challenge to build an interactive coin collecting game. 
 We faced issues with Canvas and OOP classes, but overcame them with a lot of debugging.
